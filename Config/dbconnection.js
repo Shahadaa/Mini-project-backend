@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 module.exports = {
     dbConnect: async () => {
         try{
-            await mongoose.connect("mongodb://127.0.0.1:27017").then(()=> {
+            await mongoose.connect("mongodb://127.0.0.1:27017/Ecommerce").then(()=> {
                 console.log("Mongodb Connected Successfully");
             });
         } catch(err){

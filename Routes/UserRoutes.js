@@ -1,4 +1,7 @@
 const express =require("express");
-const { signup } = require("../../frontend/src/Services/userApi");
+const { signup } = require("../Controllers/UserController");
 const router=express.Router();
-router.post('/signup');
+router.post('/signup',signup);
+
+
+module.exports=router
