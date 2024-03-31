@@ -1,9 +1,14 @@
+const{json,response}=require("express");
 const UserModel = require("../Model/UserModel");
 const jwt = require('jsonwebtoken');
- const createToken=(userId)=>{
-    const token=jwt.sign({userId},
-    "JWT",{expiresIn:'1h'});
-    return token;
+const bcrypt=require("bcrypt")
+const maxAge =3*24*60*60;
+ const createToken=(Id)=>{
+    return jwt.sign({Id},
+    "JWT",{
+        expiresIn:maxAge,
+    });
+    
  }
 module.exports.signup=async(req,res,next) =>{
 console.log(req.body,"%%%%%%%%%%%%%%%%%%%%%%%")
